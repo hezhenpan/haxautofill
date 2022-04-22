@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  自动填充账号密码,自动勾选CheckBox,抢购路上快人一步
 // @author       DDP
-// @match        *://www.hax.co.id/*
+// @match        *://*hax.co.id/*
 // @match        *://woiden.id/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant       GM_setValue
@@ -57,7 +57,7 @@
     var loc = $("label:contains('Location')").next().text().trim().replace(/\s/g,"");
     console.log("截止日期: ", dt, "账号ID: ", nm, "IPv6:", ip, "Location:", loc, "wsite:", wsite);
 
-    if (nm) {
+    if (nm && clienttoken) {
 
         GM_xmlhttpRequest({
             method: "POST",
